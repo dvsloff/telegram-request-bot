@@ -15,8 +15,8 @@ from aiogram.types import FSInputFile
 # =======================
 # Настройка
 # =======================
-API_TOKEN = "8386229219:AAHEWJVxjkitDXMqXDikEJS56BrKrty2cnE"   # сюда вставь токен из BotFather
-ADMIN_ID = 474305924              # сюда вставь свой Telegram ID
+API_TOKEN = ""   # сюда вставь токен из BotFather
+ADMIN_ID =               # сюда вставь свой Telegram ID
 
 bot = Bot(
     token=API_TOKEN,
