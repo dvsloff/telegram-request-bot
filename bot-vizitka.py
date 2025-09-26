@@ -29,7 +29,6 @@ dp = Dispatcher()
 # =======================
 conn = sqlite3.connect("requests.db")
 cursor = conn.cursor()
-cursor.execute("ALTER TABLE requests ADD COLUMN user_id INTEGER;")
 cursor.execute('''CREATE TABLE IF NOT EXISTS requests (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT,
