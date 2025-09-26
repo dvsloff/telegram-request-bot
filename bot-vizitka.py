@@ -33,7 +33,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS requests (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT,
                     phone TEXT,
-                    goal TEXT
+                    goal TEXT,
                     user_id INTEGER,
                     status TEXT
                 )''')
@@ -170,7 +170,7 @@ async def all_requests(message: types.Message):
     else:
         text = "📋 Список заявок:\n\n"
         for row in rows:
-            text += f"#{row[0]} | {row[1]} | {row[2]} | Статус: {row[3]}\n"
+            text += f"#{row[0]} | {row[1]} | {row[2]} | Цель: {row[3]} | Статус: {row[5]}\n"
         await message.answer(text)
 
 
@@ -200,7 +200,7 @@ async def export_requests(message: types.Message):
     ws.title = "Заявки"
 
     # Заголовки
-    ws.append(["Номер заявки", "Имя", "Телефон","UserID","Статус","Цель"])
+    ws.append(["Номер заявки", "Имя", "Телефон","Цель","UserID","Статус"])
 
     # Данные
     for row in rows:
